@@ -1,0 +1,48 @@
+{
+  "name": "gatsby-wiki-template",
+  "private": true,
+  "description": "A simple template to generate a markdown based wiki",
+  "version": "0.1.0",
+  "author": "Anthony Powell <adpowell@mtu.edu>",
+  "dependencies": {
+    "@progress/kendo-react-animation": "^2.6.1",
+    "@progress/kendo-react-treeview": "^2.6.1",
+    "@progress/kendo-theme-default": "^3.2.0",
+    "gatsby": "^2.0.98",
+    "gatsby-image": "^2.0.20",
+    "gatsby-plugin-manifest": "^2.0.14",
+    "gatsby-plugin-markdown-pages": "^1.0.3",
+    "gatsby-plugin-offline": "^2.0.22",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-remark": "^2.2.0",
+    "gatsby-transformer-sharp": "^2.1.8",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby",
+    "wiki"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "devDependencies": {
+    "prettier": "^1.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cephalization/gatsby-wiki"
+  },
+  "bugs": {
+    "url": "https://github.com/cephalization/gatsby-wiki/issues"
+  }
+}
