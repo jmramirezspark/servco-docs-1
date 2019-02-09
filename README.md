@@ -4,7 +4,7 @@ npm install
 
 # Run 
 gatsby develop
-```
+
 
 
 ## Adding new articles
@@ -18,6 +18,7 @@ gatsby develop
 ---
 title: 'My First Post!'
 path: '/<topic>/<post>.md'
+published: true
 ---
 
 ```
@@ -28,6 +29,7 @@ path: '/<topic>/<post>.md'
 ---
 title: 'My First Post!'
 path: '/<topic>/<post>.md'
+published: true
 ---
 
 # How to add posts
