@@ -4,7 +4,7 @@ npm install
 
 # Run 
 gatsby develop
-```
+
 
 
 ## Adding new articles
