@@ -22,7 +22,7 @@ gatsby develop
 title: 'My First Post!'
 path: '/<topic>/<post>.md'
 published: true
----
+--- 
 
 ```
 
