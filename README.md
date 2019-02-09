@@ -1,4 +1,7 @@
 
+# Install Gatsby-CLI
+npm install --global gatsby-cli
+
 # Install dependencies
 npm install 
 
