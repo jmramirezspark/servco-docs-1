@@ -14,6 +14,7 @@ published: true
 ---
 title: 'blah'
 path: '/<topic>/<post>.md'
+published: true
 ---
 ```
 
