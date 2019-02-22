@@ -1,6 +1,6 @@
 FROM node:8
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /usr/src/servco-docs
+WORKDIR /usr/src/servco-docs
 
 COPY . .
 
