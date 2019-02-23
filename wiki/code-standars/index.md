@@ -3,7 +3,7 @@ title: 'Node.js'
 path: '/Code Standars/index'
 published: true
 ---
-### 2 Spaces for indentation
+### 2 Spaces for indentation (Jesus Test)
 
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
 spaces - a special kind of hell is awaiting you otherwise.
