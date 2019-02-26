@@ -21,7 +21,7 @@ gatsby develop
 myid: 1
 date: '2019-02-25'
 title: Introduction
-description: 'Code standars to follow in ServCo project'
+description: 'Code standard to follow in ServCo project'
 logo: /img/reactlogo.svg
 ---
 
@@ -34,7 +34,7 @@ logo: /img/reactlogo.svg
 myid: 1
 date: '2019-02-25'
 title: Introduction
-description: 'Code standars to follow in ServCo project'
+description: 'Code standard to follow in ServCo project'
 logo: /img/reactlogo.svg
 ---
 

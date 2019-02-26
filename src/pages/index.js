@@ -9,9 +9,9 @@ class Index extends React.Component {
       <div className="bglight auto">
         <div className="main-grid padding-top5">
           <MainUi course={`howto`} title={`How to`}  data={this.props.data} />
-          <MainUi course={`nodejs`} title={`NodeJS Code Standars`} data={this.props.data} />
-          <MainUi course={`reactjs`} title={`ReactJS Code Standars`} data={this.props.data} />
-          <MainUi course={`mongodb`} title={`MongoDB Code Standars`}  data={this.props.data} />
+          <MainUi course={`nodejs`} title={`NodeJS Code standard`} data={this.props.data} />
+          <MainUi course={`reactjs`} title={`ReactJS Code standard`} data={this.props.data} />
+          <MainUi course={`mongodb`} title={`MongoDB Code standard`}  data={this.props.data} />
         </div>
       </div>
     )
