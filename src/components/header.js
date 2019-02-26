@@ -32,21 +32,21 @@ class Header extends React.Component {
             aria-hidden={this.state.active ? true : false}
           >
             <Link
-              to={'/nodejs/code_standars/'}
+              to={'/nodejs/code_standards/'}
               activeStyle={{ backgroundColor: '#4a597e' }}
             >
               NodeJS
             </Link>            
             
             <Link
-              to={'/reactjs/code_standars/'}
+              to={'/reactjs/code_standards/'}
               activeStyle={{ backgroundColor: '#4a597e' }}
             >
               React
             </Link>
 
             <Link
-              to={'/mongodb/code_standars/'}
+              to={'/mongodb/code_standards/'}
               activeStyle={{ backgroundColor: '#4a597e' }}
             >
               MongoDB

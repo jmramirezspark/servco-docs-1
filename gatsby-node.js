@@ -19,5 +19,3 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
   }
 }
-
-console.log('hit')

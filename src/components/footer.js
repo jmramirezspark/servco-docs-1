@@ -14,9 +14,9 @@ function Footer({ siteTitle }) {
         </Link>
 
         <nav className="footer-links">
-          <Link to={'/nodejs/code_standars/'}>NodeJS</Link>
-          <Link to={'/reactjs/code_standars/'}>React</Link>
-          <Link to={'/mongodb/code_standars/'}>MongoDB</Link>
+          <Link to={'/nodejs/code_standards/'}>NodeJS</Link>
+          <Link to={'/reactjs/code_standards/'}>React</Link>
+          <Link to={'/mongodb/code_standards/'}>MongoDB</Link>
         </nav>
       </section>
     </footer>

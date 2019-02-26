@@ -2,7 +2,7 @@
 myid: 2
 date: '2019-02-25'
 title: Basic Rules
-description: 'Code standars basic rules for React'
+description: 'Code standard basic rules for React'
 logo: /img/reactlogo.svg
 ---
 
