@@ -1,41 +1,23 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-const path = require('path');
+const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+const _ = require('lodash')
+const { generator } = require('./generator')
+const { generatePosts } = require('./helper')
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+const path = require('path')
 
-  const blogPostTemplate = path.resolve(`src/templates/wiki-post.js`);
+exports.createPages = require('./content-creators');
 
-  return graphql(`
-    {
-      allMarkdownRemark(
-        limit: 1000
-        filter: {frontmatter:{ published:{ eq:true } } } 
-        ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {}, // additional data can be passed via context
-      });
-    });
-  });
-};
+  }
+}
+
+console.log('hit')

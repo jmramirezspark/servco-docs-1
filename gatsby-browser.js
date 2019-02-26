@@ -1,1 +1,11 @@
-require("../servco-docs/prismjs/themes/prism.css")
+exports.onClientEntry = () => {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+            for (let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+}
+
+

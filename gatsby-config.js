@@ -1,104 +1,154 @@
-const config = {
-  start_url: `/`,
-  background_color: `#663399`,
-  theme_color: `#663399`,
-  icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-};
-
 module.exports = {
   siteMetadata: {
-    title: `ServCo Wiki`,
-    description: `ServCo Docs`,
-    author: `@lduenas`,
+    title:
+      'ServCo Wiki',
+    description:
+      'ServCo documentation site',
+    url: 'http://sparktechs.com',
+    siteUrl: 'http://sparktechs.com',
+    author: 'Luis Duenas',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        siteUrl: `http://sparktechs.com`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown`,
-        path: `${__dirname}/wiki`,
+        path: `${__dirname}/content`,
+        name: 'src',
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/posts`,
+        name: 'src',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-125099908-1`,
+      },
+    },
     `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: config.start_url,
-        background_color: config.background_color,
-        theme_color: config.theme_color,
-        icon: config.icon,
-        display: `minimal-ui`,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'gatsby-wiki-template',
-        short_name: 'gatsby-wiki',
-        start_url: config.start_url,
-        background_color: config.background_color,
-        theme_color: config.theme_color,
-        icon: config.icon,
-        display: `standalone`,
-      },
-    },
-    'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
+        path: `${__dirname}/src/img`,
+        name: 'images',
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-images`,
             options: {
-              // Class prefix for <pre> tags containing syntax highlighting;
-              // defaults to 'language-' (eg <pre class="language-js">).
-              // If your site loads Prism into the browser at runtime,
-              // (eg for use with libraries like react-live),
-              // you may use this to prevent Prism from re-processing syntax.
-              // This is an uncommon use-case though;
-              // If you're unsure, it's best to use the default value.
-              classPrefix: "language-",
-              // This is used to allow setting a language for inline code
-              // (i.e. single backticks) by creating a separator.
-              // This separator is a string and will do no white-space
-              // stripping.
-              // A suggested value for English speakers is the non-ascii
-              // character '›'.
-              inlineCodeMarker: null,
-              // This lets you set up language aliases.  For example,
-              // setting this to '{ sh: "bash" }' will let you use
-              // the language "sh" which will highlight using the
-              // bash highlighter.
-              aliases: {},
-              // This toggles the display of line numbers globally alongside the code.
-              // To use it, add the following line in src/layouts/index.js
-              // right after importing the prism color scheme:
-              //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
-              // Defaults to false.
-              // If you wish to only show line numbers on certain code blocks,
-              // leave false and use the {numberLines: true} syntax below
-              showLineNumbers: false,
-              // If setting this to true, the parser won't handle and highlight inline
-              // code used in markdown i.e. single backtick code like `this`.
-              noInlineHighlight: false,
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
             },
           },
         ],
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-react-next`,
+
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: '#000',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'ServCo Wiki',
+        short_name: 'ServCo',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#a2466c',
+        display: 'standalone',
+        icon: 'src/img/favicon.ico',
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.05rem`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
+              })
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { fields: [frontmatter___myid], order: ASC }
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: '/rss.xml',
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-netlify`,
+    // `gatsby-plugin-netlify-cache`,
+
   ],
-};
+}

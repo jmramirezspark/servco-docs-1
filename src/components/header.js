@@ -1,53 +1,72 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import logo from '../images/spark-logo.png'
-
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `#1e305f`,
-      marginBottom: `1.45rem`,
-      color:`#7a797a`
-    }}
-  >    
-    <img
-      style={{
-      float:`left`,
-      filter: `brightness(0) invert(1)`,
-    }}
-      src={logo} alt="Logo" />
+import React from 'react'
+import Link from 'gatsby-link'
+import './header.css'
+import GithubIcon from 'react-icons/lib/go/mark-github'
 
 
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >  
+class Header extends React.Component {
+  state = {
+    active: false,
+  }
 
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-);
+  openUp = () => {
+    this.setState({
+      active: !this.state.active,
+    })
+  }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
+  render() {
+    const { siteTitle } = this.props
+    return (
+      <div className="main-nav">
 
-Header.defaultProps = {
-  siteTitle: ``,
-};
+        <div className="header">
+          {!this.state.active && (
+            <Link to="/" className={`logostyle`}>
+              {siteTitle}
+            </Link>
+          )}
 
-export default Header;
+          <nav
+            className='nav active'
+            aria-hidden={this.state.active ? true : false}
+          >
+            <Link
+              to={'/nodejs/code_standars/'}
+              activeStyle={{ backgroundColor: '#4a597e' }}
+            >
+              NodeJS
+            </Link>            
+            
+            <Link
+              to={'/reactjs/code_standars/'}
+              activeStyle={{ backgroundColor: '#4a597e' }}
+            >
+              React
+            </Link>
+
+            <Link
+              to={'/mongodb/code_standars/'}
+              activeStyle={{ backgroundColor: '#4a597e' }}
+            >
+              MongoDB
+            </Link>
+          </nav>
+
+          <a
+            className="github"
+            href="https://github.com/sparktechsllc/servco-docs"
+            target="_blank"
+            rel="noopener noreferer"
+            style={{ color: 'white' }}
+            title="GitHub"
+          >
+            <GithubIcon style={{ verticalAlign: `text-top` }} />
+          </a>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Header

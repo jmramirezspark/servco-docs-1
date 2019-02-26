@@ -12,17 +12,18 @@ gatsby develop
 
 ## Adding new articles
 
-1. Create md file in `wiki/<topic>/<post>.md`
-    - Keep in mind, whatever directory structure you make here will be the link of the post!
+1. Create md file in `content/<topic>/<post>.md`.
 
 2. Setup frontmatter (special markdown header) at the top of the file like so:
 
 ```
 ---
-title: 'My First Post!'
-path: '/<topic>/<post>.md'
-published: true
---- 
+myid: 1
+date: '2019-02-25'
+title: Introduction
+description: 'Code standars to follow in ServCo project'
+logo: /img/reactlogo.svg
+---
 
 ```
 
@@ -30,9 +31,11 @@ published: true
 
 ```
 ---
-title: 'My First Post!'
-path: '/<topic>/<post>.md'
-published: true
+myid: 1
+date: '2019-02-25'
+title: Introduction
+description: 'Code standars to follow in ServCo project'
+logo: /img/reactlogo.svg
 ---
 
 # How to add posts

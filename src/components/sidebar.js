@@ -1,42 +1,52 @@
-import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import Link from 'gatsby-link'
+import { searchStringInArray } from '../../helper'
+import '../pages/commonMarkdown.css'
 
-import { parseLinksToTree } from '../utils/parse-links-to-tree';
+function CreateLink(props) {
+  return (
+    <div style={{ paddingBottom: '.6rem' }}>
+      <span className="dottedline" />
+      <Link
+        to={props.node.fields.slug}
+        aria-current="page"
+        activeStyle={{ fontWeight: '700', color: 'black' }}
+      >
+        <span
+          className="dotted"
+          style={{ backgroundColor: `${props.active && '#fbd84a'}` }}
+        />
+        {props.node.frontmatter.title || 'no title found'}
+      </Link>
+    </div>
+  )
+}
 
-import { NavTree } from './navtree';
-import './sidebar.css';
+class Sidebar extends React.Component {
+  render() {
+    const { allMarkdownRemark } = this.props.data
 
-const Sidebar = ({ className }) => (
-  <StaticQuery
-    query={graphql`
-      {
-        allMarkdownRemark(
-          sort: {
-            fields: [frontmatter___path], 
-            order: ASC }
-          filter: {
-            frontmatter: {
-              published: { 
-                eq:true 
-                } 
-            } 
-          } 
-        ) {
-          edges {
-            node {
-              frontmatter {
-                path
-                title
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={({ allMarkdownRemark: { edges: pages } }) => (
-      <NavTree tree={parseLinksToTree(pages)} className={className} />
-    )}
-  />
-);
+    const searchedCourse = searchStringInArray(
+      `/${this.props.course.toLowerCase()}`,
+      allMarkdownRemark.edges
+    )
+    return (
+      <div className={`sidebar ${this.props.right && 'rightbar'} `}>
+        <span className="course-logo" style={{ right: 0, opacity: 0.7 }}>
+          <img src={this.props.clogo} alt={this.props.course} />
+        </span>
+        <nav className="start-bar">
+          {searchedCourse.map(({ node }, i) => (
+            <CreateLink
+              node={node}
+              key={i}
+              active={this.props.pathname === node.fields.slug}
+            />
+          ))}
+        </nav>
+      </div>
+    )
+  }
+}
 
-export default Sidebar;
+export default Sidebar
