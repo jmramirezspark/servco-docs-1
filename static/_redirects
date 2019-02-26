@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://jshype.netlify.com/* https://jshype.com/:splat 301!
