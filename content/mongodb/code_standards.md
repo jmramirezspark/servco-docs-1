@@ -6,10 +6,10 @@ description: 'Code standard to follow in ServCo project'
 logo: /img/mongodb.png
 ---
 
-- [Basic Rules](/mongodb/code_standard_basic_rules/)
-- [Collection Names](/mongodb/code_standard_collection_names/)
-- [Database Names](/mongodb/code_standard_database_names/)
-- [Field Names](/mongodb/code_standard_field_names)
-- [Functions](/mongodb/code_standard_functions/)
-- [Aggregation](/mongodb/code_standard_aggregation/)
-- [File Naming Convention](/mongodb/code_standard_file_naming/)
+- [Basic Rules](/mongodb/code_standards_basic_rules/)
+- [Collection Names](/mongodb/code_standards_collection_names/)
+- [Database Names](/mongodb/code_standards_database_names/)
+- [Field Names](/mongodb/code_standards_field_names)
+- [Functions](/mongodb/code_standards_functions/)
+- [Aggregation](/mongodb/code_standards_aggregation/)
+- [File Naming Convention](/mongodb/code_standards_file_naming/)
