@@ -3,6 +3,8 @@ myid: 10
 date: '2019-02-25'
 title: Refs
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

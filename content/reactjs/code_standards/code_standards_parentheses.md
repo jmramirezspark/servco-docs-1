@@ -3,6 +3,8 @@ myid: 11
 date: '2019-02-25'
 title: Parentheses
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

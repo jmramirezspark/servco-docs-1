@@ -3,6 +3,8 @@ myid: 2
 date: '2019-02-25'
 title: Basic Roles
 description: ''
+thumbnail: ''
+published: true
 logo: /img/mongodb.png
 ---
 

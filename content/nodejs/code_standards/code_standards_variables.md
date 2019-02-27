@@ -3,6 +3,8 @@ myid: 4
 date: '2019-02-25'
 title: Variables
 description: ''
+thumbnail: ''
+published: true
 logo: /img/nodejslogo.png
 ---
 

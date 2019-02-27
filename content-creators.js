@@ -41,9 +41,10 @@ module.exports = async ({ graphql, boundActionCreators }) => {
         // generator(allPosts, createPage);
 
         const folders = [
-          '/nodejs',
-          '/reactjs',
-          '/mongodb',
+          '/nodejs/code_standards',
+          '/reactjs/code_standards',
+          '/mongodb/code_standards',
+          '/mongodb/database',
           '/howto',
         ]
 
@@ -82,21 +83,21 @@ module.exports = async ({ graphql, boundActionCreators }) => {
         })
 
         //creating each course group
-        const courses = [
-          'nodejs',
-          'reactjs',
-          'mongodb',
-          'howto',
-        ]
-        courses.forEach(cs => {
-          createPage({
-            path: `/${_.kebabCase(cs)}`,
-            component: courseTemplate,
-            context: {
-              cs,
-            },
-          })
-        })
+        // const courses = [
+        //   'nodejs',
+        //   'reactjs',
+        //   'mongodb',
+        //   'howto',
+        // ]
+        // courses.forEach(cs => {
+        //   createPage({
+        //     path: `/${_.kebabCase(cs)}`,
+        //     component: courseTemplate,
+        //     context: {
+        //       cs,
+        //     },
+        //   })
+        // })
 
         return
       })

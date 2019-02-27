@@ -28,6 +28,7 @@ export const query = graphql`
         description
         date(formatString: "MMM Do")
         logo
+        thumbnail
       }
       fields {
         slug

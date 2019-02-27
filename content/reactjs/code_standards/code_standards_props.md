@@ -3,6 +3,8 @@ myid: 9
 date: '2019-02-25'
 title: Props
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

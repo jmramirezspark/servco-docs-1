@@ -3,6 +3,8 @@ myid: 8
 date: '2019-02-25'
 title: File Naming Convention
 description: ''
+thumbnail: ''
+published: true
 logo: /img/mongodb.png
 ---
 

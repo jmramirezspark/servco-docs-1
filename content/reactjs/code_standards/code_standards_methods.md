@@ -3,6 +3,8 @@ myid: 13
 date: '2019-02-25'
 title: Methods
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

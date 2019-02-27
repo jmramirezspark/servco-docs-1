@@ -3,6 +3,8 @@ myid: 6
 date: '2019-02-25'
 title: Alignment
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

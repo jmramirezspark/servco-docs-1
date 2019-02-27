@@ -3,6 +3,8 @@ myid: 12
 date: '2019-02-25'
 title: Tags
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

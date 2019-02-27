@@ -3,6 +3,8 @@ myid: 3
 date: '2019-02-25'
 title: Naming Conventions
 description: ''
+thumbnail: ''
+published: true
 logo: /img/nodejslogo.png
 ---
 

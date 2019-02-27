@@ -3,6 +3,8 @@ myid: 6
 date: '2019-02-25'
 title: Functions
 description: ''
+thumbnail: ''
+published: true
 logo: /img/nodejslogo.png
 ---
 

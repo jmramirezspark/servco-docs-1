@@ -3,6 +3,8 @@ myid: 7
 date: '2019-02-25'
 title: Comments
 description: ''
+thumbnail: ''
+published: true
 logo: /img/nodejslogo.png
 ---
 

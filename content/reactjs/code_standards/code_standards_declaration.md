@@ -3,6 +3,8 @@ myid: 5
 date: '2019-02-25'
 title: Declaration
 description: ''
+thumbnail: ''
+published: true
 logo: /img/reactlogo.svg
 ---
 

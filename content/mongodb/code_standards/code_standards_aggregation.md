@@ -3,6 +3,8 @@ myid: 7
 date: '2019-02-25'
 title: Aggregation
 description: ''
+thumbnail: ''
+published: true
 logo: /img/mongodb.png
 ---
 
