@@ -38,7 +38,7 @@ logo: /img/question.svg
 
 ---
 
-### Commiting changes workflow
+### Commiting Changes Workflow
 
 1. Open your local repo and pull new changes from original remote repository
 2. Switch to *dev* branch
