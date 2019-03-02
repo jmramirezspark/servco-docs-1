@@ -6,7 +6,7 @@ description: 'How to set up staging server'
 logo: /img/question.svg
 ---
 
-### Address Info (testing jesus jenkins)
+### Address Info (testing manuel 2)
 
 Front-End (ReactJS App): http://10.0.1.89:3000/
 
