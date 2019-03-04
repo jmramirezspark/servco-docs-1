@@ -15,3 +15,5 @@ Back-End (Express.js REST API): http://10.0.1.89:5000/
 Database (MongoDB): http://10.0.1.89:27017/
 
 Servco Docs (GatsbyJS Wiki): http://10.0.1.89:4000/
+
+Jenkins: http://10.0.1.89:8080/
