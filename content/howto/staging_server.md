@@ -72,7 +72,7 @@ To deploy a new version of the system, you just need to type one of the followin
 1. Log into Jenkins
 2. Select the job you want to run
 
-![Jenkins job list](/img/jenkins_dashboard.png)
+![Jenkins job list](/img/jenkins_dashboard.PNG)
 
 3. Click on "Build Now"
 
