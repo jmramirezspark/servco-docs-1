@@ -8,8 +8,6 @@ RUN npm install --global gatsby-cli
 
 RUN npm install
 
-RUN npm audit fix
-
 RUN gatsby build
 
 EXPOSE 4000
